@@ -35,4 +35,30 @@ def turn(board)
   end
 end
 
+def turnk(board)
+  puts "Please enter 1-9:"
+  input = gets.strip
+  index = input_to_index(input)
+  if valid_move?(board, index)
+    move(board, index, chare="X")
+    display_board(board)
+  else
+    turnk(board)
+  end
+end
+
+def play(board)
+  counter = 0
+9.times do
+  counter+=1
+  if (counter % 2 == 0)
+    turnk(board)
+  else
+    turn(board)
+
+   end
+end
+end
+
+
 # Define your play method below
